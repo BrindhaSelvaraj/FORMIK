@@ -49,7 +49,7 @@ npm install
 npm start
 ```
 
-Open your browser and visit http://localhost:3000 to view the application locally.
+Open your browser and visit http://localhost:5173/ to view the application locally.
 
 ## Usage
 
