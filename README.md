@@ -28,7 +28,7 @@ You can try out the application live on
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Shanmugamrskfamily/FORMIK-VALIDATION-LIBRARY-MANAGEMENT.git
+   git clone https://https://github.com/BrindhaSelvaraj/FORMIK.git
    ```
 
 2. Change to the project directory:
