@@ -21,30 +21,31 @@ const Author = ({ author, setAuthor, authedit }) => {
         .max(50, "Must be 50 characters or less")
         .required("Required"),
     }),
+
     onSubmit: (values) => {
       console.log(values);
-      navigate("/AuthorPage");
-      formik.resetForm();
       if (values.isEditing) {
-        let a = [];
-        for (let x of author) {
-          if (x.isEditing) {
-            a.push({ ...values, isEditing: false });
+        let updatedAuthors = author.map((a) => {
+          if (a.id === values.id) {
+            return { ...values, isEditing: false };
           } else {
-            a.push(x);
+            return a;
           }
-        }
-        setAuthor(a);
+        });
+        setAuthor(updatedAuthors);
       } else {
         setAuthor([...author, values]);
       }
+      navigate("/AuthorPage"); // Move navigation after updating state
     },
   });
 
   return (
     <Card>
       <Card.Body>
-        <Card.Title> <h1 className="text-center">Enter Author-Details</h1></Card.Title>
+        <Card.Title>
+          <h1 className="text-center">Enter Author-Details</h1>
+        </Card.Title>
         <Form onSubmit={formik.handleSubmit}>
           <Form.Group controlId="name">
             <Form.Label>Author-Name</Form.Label>
@@ -95,9 +96,9 @@ const Author = ({ author, setAuthor, authedit }) => {
             ) : null}
           </Form.Group>
           <div class="d-grid gap-1">
-          <Button type="submit" variant="primary">
-            Add the Details
-          </Button>
+            <Button type="submit" variant="primary">
+              {formik.values.isEditing ? "Update Details" : "Add Details"}
+            </Button>
           </div>
         </Form>
       </Card.Body>
