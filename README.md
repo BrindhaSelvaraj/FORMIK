@@ -12,7 +12,7 @@ Welcome to the Library Management System, a web application designed to help man
 
 ## Demo
 
-You can try out the application live on 
+You can try out the application live on https://formic-25.netlify.app/
 
 ## Technologies Used
 
@@ -34,7 +34,7 @@ You can try out the application live on
 2. Change to the project directory:
 
    ```bash
-   cd library-management-system
+   cd FORMIK
    ```
 
 3. Install dependencies:
